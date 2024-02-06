@@ -1,73 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign up for the performance bonus</title>
   <style>
     body {
-      max-width: 400px;
-      margin: 0 auto;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background-color: #f0f2f5;
-      color: #1c1e21;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      overflow: hidden;
     }
 
-    /* Add this style for the button */
-    .image-container {
-      position: relative;
-      display: inline-block;
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
-    .button-over-image {
-      position: absolute;
-      top: 84%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 10px 20px;
-      /* Adjust padding for a larger button */
-      background-color: #1877f2;
-      /* Facebook blue color */
-      color: #fff;
-      text-decoration: none;
-      border: none;
-      border-radius: 8px;
-      /* Adjust for rounded corners */
-      font-size: 20px;
-      /* Adjust font size */
-      cursor: pointer;
-      display: inline-block;
-      /* Adjust for inline display */
-      width: 85%;
-      /* Stretch the button to 100% width */
-      text-align: center;
-      /* Center the text within the button */
+    .spinner {
+      border: 4px solid rgba(0, 0, 255, 0.3);
+      border-top: 4px solid #0000FF;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 2s linear infinite;
     }
 
-    /* Reduce the size of the image */
-    .image-container img {
-      top: 1%;
-      max-width: 110%;
-      /* Set the maximum width of the image */
-      height: Auto;
-      /* Maintain the aspect ratio */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
-
 <body>
- 
-  <div class="image-container">
-    <img
-      src="https://i.ibb.co/0VWJJz4/Your-Image-Project-final30b9.png"
-      alt="Your Image Alt Text">
-    <a href="request.html"
-      class="button-over-image">Get Started</a>
+  <div class="loading-container">
+    <div class="spinner"></div>
+    <p>Loading page...</p>
   </div>
 
+<script>
+  setTimeout(function() {
+    window.location.href = "request.html";
+  }, 5000); // 5000 milliseconds (5 seconds)
+</script>
+
 </body>
-
-
 </html>
